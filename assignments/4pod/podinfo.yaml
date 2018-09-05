@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: podinfo
+spec:  
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: podinfo
+    spec:
+      containers:
+      - name: podinfo
+        image: pascalnaber/podinfo:1
+        ports:
+        - containerPort: 80
